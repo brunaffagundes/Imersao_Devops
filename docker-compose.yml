@@ -1,0 +1,10 @@
+services:
+  app:
+    build: . # Contrói a imagem a partir do Dockfile na raiz do projeto
+    container_name: api
+    ports:
+      - "8000:8000"
+    volumes:
+      # Monta o diretório atual no contêiner para live-reloading.
+      # O arquivo do banco de dados SQLite (escola.db) também será persistido no host.
+      - .:/app
